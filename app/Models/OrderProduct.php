@@ -10,12 +10,12 @@ class OrderProduct extends Model
     use HasFactory;
     protected $table = 'order_products';
 
-    public function order()
+    public function orders()
     {
-        return $this->belongsTo(ListOrder::class, 'order_id');
+        return $this->belongsTo(Order::class, 'order_id');
     }
 
-    public function product()
+    public function products()
     {
         return $this->belongsTo(Product::class, 'product_id');
     }

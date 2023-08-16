@@ -9,8 +9,8 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
-    public function listOrder()
+    public function orders()
     {
-        return $this->belongsToMany(ListOrder::class, 'order_products');
+        return $this->belongsToMany(Order::class, 'order_products');
     }
 }

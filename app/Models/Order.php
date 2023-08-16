@@ -6,12 +6,12 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class ListOrder extends Model
+class Order extends Model
 {
     use HasFactory;
-    protected $table = 'list_order';
-    public function product()
+    protected $table = 'orders';
+    public function products()
     {
-        return $this->belongsToMany(Product::class, 'order_products');
+        return $this->belongsToMany(Product::class, 'order_products')->withPivot('quantity');;
     }
 }

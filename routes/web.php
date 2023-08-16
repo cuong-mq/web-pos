@@ -4,6 +4,7 @@ use App\Http\Controllers\ListOrder;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ListOrderController;
@@ -30,7 +31,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
         Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
-        Route::get('/listOrder', [ListOrderController::class, 'index'])->name('listOrder.index');
+        Route::get('/listOrder', [OrderController::class, 'index'])->name('listOrder.index');
         // Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
         // Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
         // Route::get('/post/edit/{id}', [PostController::class, 'edit'])->name('post.edit');

@@ -20,25 +20,32 @@
                                                     <th>Name</th>
                                                     <th>Total</th>
                                                     <th>Date</th>
-                                                    <th></th>
+                                                    <th>Detail</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($listOrders as $key => $listOrder)
+                                                @foreach ($orders as $key => $order)
                                                     <tr>
-                                                        <td>{{ $listOrders->firstItem() + $key }}</td>
-                                                        <td>{{ $listOrder->customer_name }}</td>
-                                                        <td>{{ $listOrder->total_amount }}</td>
-                                                        <td>{{ $listOrder->order_date }}</td>
-                                                        <td> <a 
-                                                                class="btn btn-primary btn-sm">Detail</a>
+                                                        <td>{{ $orders->firstItem() + $key }}</td>
+                                                        <td>{{ $order->customer_name }}</td>
+                                                        <td>{{ $order->total_amount }}</td>
+                                                        <td>{{ $order->order_date }}</td>
+                                                        <td>
+                                                            <ul>
+                                                                @foreach ($order->products as $product)
+                                                                    <li>{{ $product->name }}
+                                                                        (x.{{ $product->pivot->quantity }})</li>
+                                                                @endforeach
+                                                            </ul>
                                                         </td>
+
                                                     </tr>
                                                 @endforeach
+
                                             </tbody>
                                         </table>
                                         <div class="d-flex justify-content-end mt-3">
-                                            {{ $listOrders->links() }}
+                                            {{ $orders->links() }}
                                         </div>
                                     </div>
                                 </div>
