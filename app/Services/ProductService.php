@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class ProductService
 {
 
-    public function getProduct($perPage)
+    public function getProduct()
     {
-        return Product::paginate($perPage);
+        return Product::all();
     }
 
     public function storeProduct(Request $request)

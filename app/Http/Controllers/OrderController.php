@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Services\OrderService;
 
 class OrderController extends Controller
@@ -20,5 +21,12 @@ class OrderController extends Controller
 
         $orders = $this->orderService->getOrder(5);
         return view('order.list', ['orders' => $orders]);
+    }
+    public function store(Request $request)
+    {
+        $order = $request->all();
+
+        $oder = $this->orderService->storeOrder($request);
+        return response()->json($oder, Response::HTTP_CREATED);
     }
 }

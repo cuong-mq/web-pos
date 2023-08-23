@@ -17,8 +17,7 @@
     <link href="libs/flot/css/float-chart.css" rel="stylesheet" />
     <link href="dist/css/style.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="dist/js/loadcategory.js"></script>
-    <script src="dist/js/post.js"></script>
+
 
 </head>
 

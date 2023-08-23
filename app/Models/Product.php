@@ -9,8 +9,13 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
+    protected $appends = ['image_path'];
     public function orders()
     {
         return $this->belongsToMany(Order::class, 'order_products');
+    }
+
+    public function getImagePathAttribute() {
+        
     }
 }

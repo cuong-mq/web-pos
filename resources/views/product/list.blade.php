@@ -28,7 +28,7 @@
                                             <tbody>
                                                 @foreach ($products as $key => $product)
                                                     <tr>
-                                                        <td>{{ $products->firstItem() + $key }}</td>
+                                                        <td>{{ $key + 1}}</td>
                                                         <td>{{ $product->name }}</td>
                                                         <td>{{ $product->description }}</td>
                                                         <td>
@@ -57,9 +57,9 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        <div class="d-flex justify-content-end mt-3">
+                                        {{-- <div class="d-flex justify-content-end mt-3">
                                             {{ $products->links() }}
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
